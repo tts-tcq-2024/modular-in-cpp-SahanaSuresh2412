@@ -11,13 +11,15 @@ namespace TelCoColorCoder
 		return major * numberOfMinorColors + minor + 1;
 	}
  
-	void printColorCodingManual() {
+	std::list<numberWithPair> generateColorCodingManual() {
 		int pairNumber = 1;
+		std::list<numberWithPair> generatedManual;
     	for (int majorColorIterator = 0; majorColorIterator < 5; ++majorColorIterator) {
-        for (int minorColorIterator = 0; minorColorIterator < 5; ++minorColorIterator) {
-            std::cout << "Pair Number " << pairNumber << ": " << TelCoColorCoder::MajorColorNames[majorColorIterator] << " - " << TelCoColorCoder::MinorColorNames[minorColorIterator] << std::endl;
-            ++pairNumber;
-        }
-    }
+	        for (int minorColorIterator = 0; minorColorIterator < 5; ++minorColorIterator) {
+			generatedManual.push_back({pairNumber, TelCoColorCoder::MajorColorNames[majorColorIterator], TelCoColorCoder::MinorColorNames[minorColorIterator]});
+			pairNumber++;
+	        }
+    	}
+		return generatedManual;
 	}
 }
