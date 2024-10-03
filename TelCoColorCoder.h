@@ -1,8 +1,10 @@
 #ifndef TELCOCOLORCODER_H
 #define TELCOCOLORCODER_H
+ 
 #include <string>
 #include <iostream>
 #include <assert.h>
+#include <list>
  
 namespace TelCoColorCoder 
 {
@@ -26,6 +28,12 @@ namespace TelCoColorCoder
     int GetPairNumberFromColor(MajorColor major, MinorColor minor);
 }
  
-void printColorCodingManual();
+struct numberWithPair {
+int pairNumber;
+std::string majorColor;
+std::string minorColor;
+};
+ 
+void generateColorCodingManual();
  
 #endif
